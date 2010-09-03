@@ -11,7 +11,7 @@ class Tidybuf
   # Mimic TidyBuffer.
   #
   TidyBuffer = struct [
-    # "int* allocator",
+    "int* allocator",
     "byte* bp",
     "uint size",
     "uint allocated",
