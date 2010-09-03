@@ -1,0 +1,17 @@
+# Note:
+# Had to patch the tidy 1.1.2 gem with the following otherwise it wasn't working correctly
+# http://rubyforge.org/tracker/index.php?func=detail&aid=10007&group_id=435&atid=1744
+
+# The resolution is to patch tidybuf.rb:
+# 
+# 
+# --- tidybuf.rb  2007-04-10 09:09:01.000000000 -0500
+# +++ tidybuf.rb.patched  2007-04-10 09:08:55.000000000 -0500
+# @@ -11,6 +11,7 @@
+#    # Mimic TidyBuffer.
+#    #
+#    TidyBuffer = struct [
+# +    "int* allocator",
+#      "byte* bp",
+#      "uint size",
+#      "uint allocated",
